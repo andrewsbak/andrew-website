@@ -24,18 +24,19 @@
             position: fixed;
             width: 20px;
             height: 20px;
-            border: 2px solid #000;
+            border: 2px solid #fff;
             border-radius: 50%;
             pointer-events: none;
             z-index: 10001;
-            transition: all 0.1s ease;
+            transition: all 0.15s ease;
             mix-blend-mode: difference;
+            transform: translate(-50%, -50%);
         }
 
         .custom-cursor.hover {
             width: 40px;
             height: 40px;
-            background: rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.1);
         }
 
         nav {
@@ -129,6 +130,7 @@
         .hero-content {
             max-width: 1200px;
             width: 100%;
+            z-index: 1;
         }
 
         .hero h1 {
@@ -146,11 +148,8 @@
             -webkit-text-stroke: 2px #fff;
             text-stroke: 2px #fff;
             display: inline-block;
-            animation: glitchOutline 3s infinite;
-        }
-
-      @keyframes glitchOutline {
-            0%, 100% { transform: translate(0); }
+            paint-order: stroke fill;
+            -webkit-font-smoothing: antialiased;
         }
 
         .hero-subtitle {
@@ -216,6 +215,7 @@
             aspect-ratio: 3/4;
             overflow: hidden;
             border: 3px solid #000;
+            background: #f0f0f0;
         }
 
         .headshot {
@@ -291,13 +291,17 @@
             left: 0;
             width: 0;
             height: 8px;
-            background: #000;
+            background: #fff;
             opacity: 0.1;
             transition: width 0.6s ease;
         }
 
         .visible .large-text .bold::after {
             width: 100%;
+        }
+
+        section:not(.dark) .large-text .bold::after {
+            background: #000;
         }
 
         .body-text {
@@ -333,7 +337,6 @@
             background: #000;
             margin-top: 5rem;
             border: 1px solid #000;
-            perspective: 1000px;
         }
 
         .skill-item {
@@ -348,8 +351,8 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
             gap: 0.8rem;
-            transform-style: preserve-3d;
         }
 
         .skill-icon {
@@ -359,9 +362,9 @@
         }
 
         .skill-item:hover {
-            transform: scale(1.08) translateZ(20px);
+            transform: scale(1.05);
             z-index: 10;
-            box-shadow: 0 20px 60px rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
         }
 
         .skill-item:hover .skill-icon {
@@ -566,6 +569,7 @@
             color: #999;
             font-size: 0.9rem;
             letter-spacing: 1px;
+            background: #000;
         }
 
         @media (max-width: 1024px) {
@@ -637,6 +641,7 @@
     </nav>
 
     <section class="hero">
+        <div class="grid-background"></div>
         <div class="hero-content">
             <h1>
                 <span class="outline">ANDREW</span><br>
@@ -654,7 +659,7 @@
         <div class="split-section">
             <div class="headshot-container">
                 <div class="headshot-frame">
-                    <img src="" alt="Andrew Bak" class="headshot" />
+                    <img src="https://via.placeholder.com/450x600/f0f0f0/666666?text=Your+Photo" alt="Andrew Bak" class="headshot" />
                 </div>
                 <div class="headshot-accent"></div>
             </div>
