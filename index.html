@@ -20,7 +20,6 @@
             cursor: none;
         }
 
-        /* Custom cursor */
         .custom-cursor {
             position: fixed;
             width: 20px;
@@ -39,7 +38,6 @@
             background: rgba(0, 0, 0, 0.1);
         }
 
-        /* Navigation */
         nav {
             position: fixed;
             top: 0;
@@ -98,7 +96,6 @@
             color: #fff;
         }
 
-        /* Hero */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -111,7 +108,6 @@
             overflow: hidden;
         }
 
-        /* Animated grid background */
         .grid-background {
             position: absolute;
             top: 0;
@@ -173,7 +169,6 @@
             font-weight: 600;
         }
 
-        /* About */
         section {
             max-width: 1600px;
             margin: 0 auto;
@@ -194,7 +189,6 @@
             color: #999;
         }
 
-        /* Scroll reveal animations */
         .scroll-section {
             opacity: 0;
             transform: translateY(100px);
@@ -316,7 +310,6 @@
             margin-bottom: 2rem;
         }
 
-        /* Big Quote */
         .quote-section {
             padding: 20rem 4rem;
             background: #000;
@@ -336,7 +329,6 @@
             font-weight: 700;
         }
 
-        /* Skills Grid */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -379,7 +371,6 @@
             transform: rotateY(360deg);
         }
 
-        /* Projects */
         .project-item {
             padding: 8rem 0;
             border-top: 1px solid #e0e0e0;
@@ -479,7 +470,6 @@
             color: #fff;
         }
 
-        /* Contact */
         .contact-section {
             padding: 20rem 4rem;
             background: #000;
@@ -573,7 +563,6 @@
             text-stroke: 1px #000;
         }
 
-        /* Footer */
         footer {
             padding: 3rem 4rem;
             text-align: center;
@@ -582,7 +571,6 @@
             letter-spacing: 1px;
         }
 
-        /* Responsive */
         @media (max-width: 1024px) {
             nav, section, .hero, .contact-section {
                 padding-left: 2rem;
@@ -639,7 +627,6 @@
 <body>
     <div class="custom-cursor"></div>
     
-    <!-- Navigation -->
     <nav>
         <div class="nav-content">
             <a href="#" class="logo">PORTFOLIO</a>
@@ -652,7 +639,6 @@
         </div>
     </nav>
 
-    <!-- Hero -->
     <section class="hero">
         <div class="hero-content">
             <h1>
@@ -666,7 +652,6 @@
         </div>
     </section>
 
-    <!-- About -->
     <section id="about" class="scroll-section">
         <div class="section-label">ABOUT</div>
         <div class="split-section">
@@ -690,14 +675,12 @@
         </div>
     </section>
 
-    <!-- Quote Section -->
     <div class="quote-section scroll-section">
         <blockquote>
             New <span class="bold">challenges</span> in a <span class="bold">dynamic landscape</span> that never stops <span class="bold">changing</span>
         </blockquote>
     </div>
 
-    <!-- Skills -->
     <section id="skills" class="dark scroll-section">
         <div class="section-label">TECHNICAL EXPERTISE</div>
         <h2 class="large-text">Core <span class="bold">capabilities</span></h2>
@@ -769,7 +752,6 @@
         </div>
     </section>
 
-    <!-- Projects -->
     <section id="work" class="scroll-section">
         <div class="section-label">SELECTED WORK</div>
         
@@ -852,7 +834,6 @@
         </div>
     </section>
 
-    <!-- Contact -->
     <section id="contact" class="contact-section dark scroll-section">
         <div class="contact-content">
             <h2>LET'S<br>CONNECT</h2>
@@ -883,7 +864,6 @@
     </footer>
 
     <script>
-        // Custom cursor
         const cursor = document.querySelector('.custom-cursor');
         const hoverElements = document.querySelectorAll('a, button, .skill-item, .project-item');
 
@@ -897,7 +877,6 @@
             el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
         });
 
-        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -908,7 +887,6 @@
             });
         });
 
-        // Nav background on scroll
         const nav = document.querySelector('nav');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 100) {
@@ -918,7 +896,6 @@
             }
         });
 
-        // Scroll reveal animation
         const scrollSections = document.querySelectorAll('.scroll-section');
         
         const revealOnScroll = () => {
@@ -933,9 +910,8 @@
         };
 
         window.addEventListener('scroll', revealOnScroll);
-        revealOnScroll(); // Check on load
+        revealOnScroll();
 
-        // Subtle parallax effect - only on hero section
         const heroContent = document.querySelector('.hero-content');
         window.addEventListener('scroll', () => {
             if (heroContent) {
@@ -946,7 +922,6 @@
             }
         });
 
-        // Stagger animations for skills
         const skillItems = document.querySelectorAll('.skill-item');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry, index) => {
